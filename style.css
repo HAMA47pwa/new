@@ -1,0 +1,49 @@
+:root{
+  --brand:#d62427; --brand-ink:#a31b1e;
+  --ink:#1c2026; --muted:#7a848e;
+  --bg:#f6f6f7; --card:#ffffff; --line:#eef1f5;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+  font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+
+.appbar{
+  position:sticky;top:0;z-index:10;
+  display:grid;grid-template-columns:48px 1fr 48px;align-items:center;
+  height:48px;background:#fff;
+}
+.appbar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--brand)}
+.title{margin:0;text-align:center;font-weight:700;font-size:16px}
+.icon-btn{appearance:none;background:none;border:none;height:48px;width:48px;font-size:22px;color:#6b7280}
+.icon-btn.help{font-weight:700;border-radius:999px;border:1.5px solid #e5e7eb;width:28px;height:28px;
+  display:grid;place-items:center;justify-self:end;margin-right:10px;font-size:14px;color:#9aa2ad}
+
+.acct-summary{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:16px;background:#fff}
+.acct-meta .line1{font-size:14px;color:#4b5563}
+.acct-meta .line2{font-size:13px;color:#9aa2ad;margin-top:2px}
+.balance{font-weight:800;font-size:24px;color:#111827;white-space:nowrap}
+.balance .yen{font-weight:600;font-size:12px;color:#6b7280;margin-left:2px}
+
+.cond{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 16px}
+.cond-caption{font-size:13px;color:#6b7280;margin-bottom:10px}
+.pill{width:100%;display:flex;align-items:center;gap:8px;justify-content:center;
+  border:1.6px solid #e5e7eb;border-radius:12px;background:#fff;padding:10px 12px;font-weight:700}
+.pill .loupe{font-size:14px}
+.after-toggle{display:flex;align-items:center;gap:8px;color:#6b7280;font-size:13px;margin-top:12px}
+.after-toggle input{width:38px;height:22px}
+
+.year-head{padding:12px 16px;background:#f8f9fb;color:#6b7280;font-weight:700;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+.tx-list{list-style:none;margin:0;padding:0;background:#fff}
+.tx{display:grid;grid-template-columns:64px 1fr auto;align-items:center;
+  padding:14px 16px;border-bottom:1px solid var(--line);position:relative}
+.tx .date{font-size:12px;color:#9aa2ad}
+.tx .title{font-size:15px;color:#111827}
+.tx .amount{font-weight:800;white-space:nowrap}
+.tx .amount .yen{font-weight:700;font-size:12px;color:#6b7280;margin-left:2px}
+.tx .amount.minus{color:var(--brand)}
+.tx .amount.plus{color:#138a4b}
+.tx::before{content:"";position:absolute;left:16px;right:16px;bottom:-1px;height:1px;background:var(--line)}
+.tx .after{position:absolute;right:16px;bottom:6px;font-size:12px;color:#9aa2ad}
+
+.version{color:#9aa2ad;text-align:center;padding:18px 0 26px;font-size:12px}

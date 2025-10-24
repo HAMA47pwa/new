@@ -5,18 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>入出金明細</title>
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#d62427">
+  <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="history-page">
-  <!-- ヘッダー -->
   <header class="appbar">
     <button class="icon-btn" onclick="history.back()" aria-label="戻る">‹</button>
     <h1 class="title">入出金明細</h1>
     <button class="icon-btn help" aria-label="ヘルプ">?</button>
   </header>
 
-  <!-- 口座情報 + 残高 -->
   <section class="acct-summary">
     <div class="acct-meta">
       <div class="line1">名古屋営業部</div>
@@ -27,49 +25,25 @@
     </div>
   </section>
 
-  <!-- 条件バー -->
   <section class="cond">
     <div class="cond-caption">表示条件：2025/09/25 – 2025/10/24, 全取引</div>
     <button class="pill"><span class="loupe">🔍</span>口座・期間等を変更</button>
     <label class="after-toggle"><input id="after" type="checkbox"><span>取引後残高</span></label>
   </section>
 
-  <!-- 年見出し -->
   <div class="year-head">2025年</div>
 
-  <!-- 取引リスト -->
   <ul class="tx-list" aria-label="取引一覧">
-    <li class="tx">
-      <div class="date">10/24</div>
-      <div class="title">給与</div>
-      <div class="amount plus">423,704<span class="yen">円</span></div>
-    </li>
-    <li class="tx">
-      <div class="date">10/23</div>
-      <div class="title">振込 2 ｜ （　）</div>
-      <div class="amount">19,360<span class="yen">円</span></div>
-    </li>
-    <li class="tx">
-      <div class="date">10/10</div>
-      <div class="title">手数料</div>
-      <div class="amount minus">-110<span class="yen">円</span></div>
-    </li>
-    <li class="tx">
-      <div class="date">10/10</div>
-      <div class="title">カード</div>
-      <div class="amount minus">-33,000<span class="yen">円</span></div>
-    </li>
-    <li class="tx">
-      <div class="date">10/10</div>
-      <div class="title">振込 1 ｜ クワナシジドウテアテ</div>
-      <div class="amount">30,000<span class="yen">円</span></div>
-    </li>
+    <li class="tx"><div class="date">10/24</div><div class="title">給与</div><div class="amount plus">423,704<span class="yen">円</span></div></li>
+    <li class="tx"><div class="date">10/23</div><div class="title">振込 2 ｜ （　）</div><div class="amount">19,360<span class="yen">円</span></div></li>
+    <li class="tx"><div class="date">10/10</div><div class="title">手数料</div><div class="amount minus">-110<span class="yen">円</span></div></li>
+    <li class="tx"><div class="date">10/10</div><div class="title">カード</div><div class="amount minus">-33,000<span class="yen">円</span></div></li>
+    <li class="tx"><div class="date">10/10</div><div class="title">振込 1 ｜ クワナシジドウテアテ</div><div class="amount">30,000<span class="yen">円</span></div></li>
   </ul>
 
-  <footer class="version">ver.1.1.0 (History PWA v2)</footer>
+  <footer class="version">ver.1.2.0 (History PWA v3)</footer>
 
   <script>
-    // 取引後残高トグル（見た目デモ）
     const toggle = document.getElementById('after');
     toggle.addEventListener('change', () => {
       document.querySelectorAll('.tx').forEach((row) => {
@@ -80,7 +54,6 @@
         } else { ghost && ghost.remove(); }
       });
     });
-    // PWA: Service Worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
     }

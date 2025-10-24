@@ -4,65 +4,55 @@
   --bg:#f6f7f9; --card:#ffffff; --line:#e5e7eb; --line-soft:#eef1f5;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   font-size:16px;line-height:1.45;letter-spacing:.2px}
-/* 数字の桁揃え */
-body, .amount, .balance .num{font-variant-numeric:tabular-nums;}
+body, .amount, .balance .num{font-variant-numeric:tabular-nums}
 
-/* ===== ヘッダー ===== */
+/* Header */
 .appbar{
-  position:sticky;top:0;z-index:10;
   display:grid;grid-template-columns:48px 1fr 48px;align-items:center;
   height:48px;background:#fff;
 }
-.appbar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--brand)}
-.title{margin:0;text-align:center;font-weight:700;font-size:16px;letter-spacing:.1px}
+.title{margin:0;text-align:center;font-weight:700;font-size:16px}
 .icon-btn{appearance:none;background:none;border:none;height:48px;width:48px;font-size:22px;color:#6b7280}
 .icon-btn.help{
-  font-weight:700;border-radius:999px;border:1.5px solid var(--line);width:28px;height:28px;
-  display:grid;place-items:center;justify-self:end;margin-right:10px;font-size:14px;color:#9aa2ad}
+  font-weight:700;border-radius:999px;width:28px;height:28px;
+  display:grid;place-items:center;justify-self:end;margin-right:10px;font-size:14px;
+  color:var(--brand);border:1.5px solid #f2f2f2}
 
-/* ===== 口座情報 ===== */
-.acct-summary{
-  display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
-  padding:16px;background:#fff;border-bottom:1px solid var(--line-soft)
-}
+/* Account Info */
+.acct-summary{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
+  padding:16px;background:#fff;border-bottom:1px solid var(--line-soft)}
 .acct-meta .line1{font-size:14px;color:#374151}
 .acct-meta .line2{font-size:13px;color:var(--muted2);margin-top:2px}
 .balance{font-weight:800;font-size:24px;color:#111827;white-space:nowrap}
 .balance .yen{font-weight:600;font-size:12px;color:#6b7280;margin-left:2px}
 
-/* ===== 条件バー ===== */
+/* Filter */
 .cond{background:#fff;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);padding:12px 16px}
-.cond-caption{font-size:13px;color:#6b7280;margin-bottom:10px}
-.pill{
-  width:100%;display:flex;align-items:center;gap:8px;justify-content:center;
-  border:1.6px solid var(--line);border-radius:12px;background:#fff;padding:11px 12px;
-  font-weight:700;color:#2c3440
-}
-.pill .loupe{font-size:14px}
+.cond-caption{font-size:13px;color:#6b7280;font-weight:700;margin-bottom:10px}
+.pill{width:100%;display:flex;align-items:center;gap:8px;justify-content:center;
+  border:1.6px solid var(--line);border-radius:12px;background:#fff;padding:13px 14px;
+  font-weight:700;color:#2c3440;font-size:15px;}
+.pill .loupe{font-size:14px;color:var(--brand)}
 .after-toggle{display:flex;align-items:center;gap:8px;color:#6b7280;font-size:13px;margin-top:12px}
 .after-toggle input{width:38px;height:22px}
 
-/* ===== 年見出し ===== */
+/* Year */
 .year-head{padding:12px 16px;background:#f8f9fb;color:#6b7280;font-weight:700;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
 
-/* ===== 取引リスト ===== */
+/* Transactions */
 .tx-list{list-style:none;margin:0;padding:0;background:#fff}
-.tx{
-  display:grid;grid-template-columns:56px 1fr auto;align-items:center;
-  padding:14px 16px;border-bottom:1px solid var(--line-soft);position:relative
-}
-.tx .date{font-size:12px;color:var(--muted2);text-align:left}
+.tx{display:grid;grid-template-columns:56px 1fr auto;align-items:center;
+  padding:14px 16px;border-bottom:1px solid var(--line-soft)}
+.tx .date{font-size:12px;color:var(--muted2)}
 .tx .title{font-size:15px;color:#111827}
-.tx .amount{font-weight:800;font-size:17px;white-space:nowrap;letter-spacing:.1px}
+.tx .amount{font-weight:800;font-size:17px;white-space:nowrap}
 .tx .amount .yen{font-weight:700;font-size:12px;color:#6b7280;margin-left:2px}
 .tx .amount.minus{color:var(--brand)}
 .tx .amount.plus{color:#15803d}
-.tx::before{content:"";position:absolute;left:16px;right:16px;bottom:-1px;height:1px;background:var(--line-soft)}
 .tx .after{position:absolute;right:16px;bottom:6px;font-size:12px;color:#9aa2ad}
 
-/* ===== フッターバージョン ===== */
+/* Footer */
 .version{color:#9aa2ad;text-align:center;padding:18px 0 26px;font-size:12px}
